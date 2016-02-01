@@ -3,7 +3,6 @@
 
 // Even Further:
 // Add functionality to delete quotes
-// Style page
 
 var init = function(){
 
@@ -123,6 +122,41 @@ var init = function(){
   var input2 = document.getElementById('quote-author-input');
   input2.onkeyup = whileTyping;
 
+
+  // Even Further:
+  // Style page
+  var quoteBox = document.getElementsByTagName('blockquote');
+  for(i=0; i<quoteBox.length; i++){
+    // quoteBox[0].style.position = "absolute";
+    // quoteBox[0].style.top = "2px";
+    // quoteBox[0].style.left = "0px";
+    quoteBox[i].style.width = "300px";
+    quoteBox[i].style.margin = "8px";
+    quoteBox[i].style.padding = "2px";
+    quoteBox[i].style.float = "left";
+    quoteBox[i].style.fontWeight = "300";
+    quoteBox[i].style.border = "1px solid #c4c4c4";
+    quoteBox[i].style.borderRadius = "6px";
+    quoteBox[i].style.textAlign = "left";
+    quoteBox[i].style.background = "#fff";
+    quoteBox[i].style.boxSizing = "border-box";
+    quoteBox[i].style.display = "block";
+    quoteBox[i].style.background = "linear-gradient(wheat, tomato, wheat)";
+    var cite = quoteBox[i].getElementsByTagName('cite')[0];
+    cite.style.display = "block";
+    cite.style.padding = "2px";
+    cite.style.textAlign = "right";
+  }
+
+  var asides = document.getElementsByTagName('aside');
+  for(i=0; i<asides.length; i++){
+    asides[i].style.display = "block";
+    asides[i].style.clear = "both";
+  }
+
+  var form = document.getElementById('sign-up');
+  form.style.background = "linear-gradient(wheat, tomato, wheat)";
+
   // var quoteArticle = document.createElement("article");
   // quoteArticle.classList.add("quote");
 
@@ -162,9 +196,6 @@ var init = function(){
   // newBlockquote.appendChild(newCite);
   // newQuoteArticle.appendChild(newBlockquote);
   // featuredQuotes.appendChild(newQuoteArticle);
-
-  // var form = document.querySelector('form');
-  // form.style.background = "linear-gradient(wheat, tomato, wheat)";
 }
 
 window.onload = init;
